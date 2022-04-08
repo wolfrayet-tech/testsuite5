@@ -404,18 +404,11 @@ input[type=range]::-moz-range-thumb:active {
   cursor: -moz-grabbing;
 }
 
-
-label {
+.put {
   font: 1rem 'Fira Sans', monospace, serif;
   font-size: large;
   color:rgb(0, 204, 255);
   position: absolute;   
   top: 255px;
   right: 40px;
-}
-
-input {
-  position: absolute;   
-  top: 250px;
-  right: 100px;
 }

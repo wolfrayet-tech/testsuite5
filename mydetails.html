@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script> 
+    <script>     
     $(document).ready(function(){
       $("#flip").click(function(){        
         $("#panel").slideToggle("slow");
@@ -63,7 +63,134 @@
         $("#panel43").slideToggle("slow");
       });
     });
+    $(document).ready(function(){
+      $("#flip4").click(function(){        
+        $("#panel122").slideToggle("slow");
+        $("#panel123").slideToggle("slow");
+        $("#panel124").slideToggle("slow");
+        $("#panel125").slideToggle("slow");        
+      });      
+    });
+    $(document).ready(function(){
+      $("#flip5").click(function(){        
+        $("#panel01").slideToggle("slow");
+        $("#panel02").slideToggle("slow");
+        $("#panel03").slideToggle("slow");
+        $("#panel04").slideToggle("slow");
+        $("#panel05").slideToggle("slow");
+        $("#panel06").slideToggle("slow");
+        $("#panel07").slideToggle("slow");
+        $("#panel08").slideToggle("slow");
+        $("#panel09").slideToggle("slow");
+        $("#panel010").slideToggle("slow");
+        $("#panel011").slideToggle("slow");
+        $("#panel012").slideToggle("slow");        
+      });
+    });
+    $(document).ready(function(){
+      $("#flip6").click(function(){        
+        $("#panel021").slideToggle("slow");
+        $("#panel022").slideToggle("slow");
+        $("#panel023").slideToggle("slow");
+        $("#panel024").slideToggle("slow");
+        $("#panel025").slideToggle("slow");
+        $("#panel026").slideToggle("slow");
+        $("#panel027").slideToggle("slow");
+        $("#panel028").slideToggle("slow");
+        $("#panel029").slideToggle("slow");
+        $("#panel0210").slideToggle("slow");
+        $("#panel0211").slideToggle("slow");
+        $("#panel0212").slideToggle("slow");        
+      });
+    });
     </script>
+    <script>var inputRange = document.getElementsByClassName('range')[0],
+      maxValue = 100, // the higher the smoother when dragging
+      speed = 5,
+      currValue, rafID;  
+  // set min/max value
+  inputRange.min = 0;
+  inputRange.max = maxValue;  
+  // listen for unlock
+  function unlockStartHandler() {
+      // clear raf if trying again
+      window.cancelAnimationFrame(rafID);      
+      // set to desired value
+      currValue = +this.value;
+  }  
+  function unlockEndHandler() {      
+      // store current value
+      currValue = +this.value;      
+      // determine if we have reached success or not
+      if(currValue >= maxValue) {
+          successHandler();
+      }
+      else {
+          rafID = window.requestAnimationFrame(animateHandler);
+      }
+  }  
+  // handle range animation
+  function animateHandler() {  
+      // calculate gradient transition
+      var transX = currValue - maxValue;      
+      // update input range
+      inputRange.value = currValue;
+  
+      //Change slide thumb color on mouse up
+      if (currValue < 20) {
+          inputRange.classList.remove('ltpurple');
+      }
+      if (currValue < 40) {
+          inputRange.classList.remove('purple');
+      }
+      if (currValue < 60) {
+          inputRange.classList.remove('pink');
+      }
+      
+      // determine if we need to continue
+      if(currValue > -1) {
+        window.requestAnimationFrame(animateHandler);   
+      }
+      
+      // decrement value
+      currValue = currValue - speed;
+  }
+  
+  // handle successful unlock
+  function successHandler() {
+    alert('Unlocked');
+  };
+  
+  // bind events
+  inputRange.addEventListener('mousedown', unlockStartHandler, false);
+  inputRange.addEventListener('mousestart', unlockStartHandler, false);
+  inputRange.addEventListener('mouseup', unlockEndHandler, false);
+  inputRange.addEventListener('touchend', unlockEndHandler, false);
+  
+  // move gradient
+  inputRange.addEventListener('input', function() {
+      //Change slide thumb color on way up
+      if (this.value > 20) {
+          inputRange.classList.add('ltpurple');
+      }
+      if (this.value > 40) {
+          inputRange.classList.add('purple');
+      }
+      if (this.value > 60) {
+          inputRange.classList.add('pink');
+      }
+  
+      //Change slide thumb color on way down
+      if (this.value < 20) {
+          inputRange.classList.remove('ltpurple');
+      }
+      if (this.value < 40) {
+          inputRange.classList.remove('purple');
+      }
+      if (this.value < 60) {
+          inputRange.classList.remove('pink');
+      }
+  });</script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -96,6 +223,15 @@
   </button>  
 </br>
 </br>
+
+<div>
+  <input type="color" id="Theme" name="Theme"
+         value="#ffac1c">
+  <label for="Theme">Theme</label>
+</div>
+
+
+
 <button class='btn block-cube block-cube-hover' type='button'>    
   <div class='bg-top'>
     <div class='bg-inner'></div>
@@ -147,6 +283,10 @@
         <div class='bg-inner'></div>      
       </div>    
     </div>  
+
+
+
+
   <button class='btn block-cube block-cube-hover' type='button'>    
     <div class='bg-top'>
       <div class='bg-inner'></div>
@@ -162,7 +302,6 @@
     </div>
   </button>
 </br>
-
 <div style="max-width:400px;margin:auto">
   <div id="panel" class='control block-cube block-input input-icons'>    
     <input name='Instagram' placeholder='Instagram' type='text'> 
@@ -216,6 +355,9 @@
 </div>
 </br>
 
+
+
+
 <button class='btn block-cube block-cube-hover' type='button'>    
   <div class='bg-top'>
     <div class='bg-inner'></div>
@@ -256,7 +398,6 @@
   </div>
 </div>
 <textarea id="panel18" class="control block-cube block-input input-icons" maxlength="56" placeholder="Job Description" rows="5" cols="50" name="about" style="max-width:100%;font-size: large; background-color:#212121; color: white; outline-color: white;"></textarea>
-
 <div id="panel19" class='control block-cube block-input input-icons'>
   <input name='Company name 2' placeholder='2nd Company Name' type='text'>
   <div class='bg'>
@@ -308,8 +449,10 @@
   </div>
 </div>
 <textarea id="panel28" class="control block-cube block-input input-icons" maxlength="56" placeholder="Job Description" rows="5" cols="50" name="about" style="max-width:100%;font-size: large; background-color:#212121; color: white; outline-color: white;"></textarea>
-
 </br>
+
+
+
 <button class='btn block-cube block-cube-hover' type='button'>    
   <div class='bg-top'>
     <div class='bg-inner'></div>
@@ -350,7 +493,6 @@
   </div>
 </div>
 <textarea id="panel33" class="control block-cube block-input input-icons" maxlength="56" placeholder="Course Description" rows="5" cols="50" name="about" style="max-width:100%;font-size: large; background-color:#212121; color: white; outline-color: white;"></textarea>
-
 <div id="panel34" class='control block-cube block-input input-icons'>
   <input name='University Name 1' placeholder='University Name |Bachelor' type='text'>
   <div class='bg'>
@@ -376,7 +518,6 @@
   </div>
 </div>
 <textarea id="panel38" class="control block-cube block-input input-icons" maxlength="56" placeholder="Degree Description" rows="5" cols="50" name="about" style="max-width:100%;font-size: large; background-color:#212121; color: white; outline-color: white;"></textarea>
-
 <div id="panel39" class='control block-cube block-input input-icons'>
   <input name='University Name 2' placeholder='University Name |Masters' type='text'>
   <div class='bg'>
@@ -402,9 +543,203 @@
   </div>
 </div>
 <textarea id="panel43" class="control block-cube block-input input-icons" maxlength="56" placeholder="Degree Description" rows="5" cols="50" name="about" style="max-width:100%;font-size: large; background-color:#212121; color: white; outline-color: white;"></textarea>
-
-
 </br>
+
+
+
+<button class='btn block-cube block-cube-hover' type='button'>    
+  <div class='bg-top'>
+    <div class='bg-inner'></div>
+  </div>
+  <div class='bg-right'>
+    <div class='bg-inner'></div>
+  </div>
+  <div class='bg'>
+    <div class='bg-inner'></div>
+  </div>
+  <div id="flip4" class="text">
+   Portfolio Images
+  </div>
+</button> 
+</br>
+<div id="panel122" class='control block-cube block-input input-icons'>    
+  <input name='fileToUpload' id="fileToUpload" placeholder='Profile Image' type='file'>    
+  <div class='bg'>      
+    <div class='bg-inner'></div>      
+  </div>    
+</div> 
+<div id="panel123" class='control block-cube block-input input-icons'>    
+  <input name='fileToUpload' id="fileToUpload" placeholder='Profile Image' type='file'>    
+  <div class='bg'>      
+    <div class='bg-inner'></div>      
+  </div>    
+</div> 
+<div id="panel124" class='control block-cube block-input input-icons'>    
+  <input name='fileToUpload' id="fileToUpload" placeholder='Profile Image' type='file'>    
+  <div class='bg'>      
+    <div class='bg-inner'></div>      
+  </div>    
+</div> 
+<div id="panel125" class='control block-cube block-input input-icons'>    
+  <input name='fileToUpload' id="fileToUpload" placeholder='Profile Image' type='file'>    
+  <div class='bg'>      
+    <div class='bg-inner'></div>      
+  </div>    
+</div> 
+</br>
+
+<button class='btn block-cube block-cube-hover' type='button'>    
+  <div class='bg-top'>
+    <div class='bg-inner'></div>
+  </div>
+  <div class='bg-right'>
+    <div class='bg-inner'></div>
+  </div>
+  <div class='bg'>
+    <div class='bg-inner'></div>
+  </div>
+  <div id="flip5" class="text">
+   Services
+  </div>
+</button> 
+</br>
+<div id="panel01" class='control block-cube block-input input-icons'>
+  <input name='Service Name' placeholder='Service Name' type='text'>
+  <div class='bg'>
+    <div class='bg-inner'></div>
+  </div>
+</div>
+<textarea id="panel02" class="control block-cube block-input input-icons" maxlength="56" placeholder="Service Description" rows="5" cols="50" name="about" style="max-width:100%;font-size: large; background-color:#212121; color: white; outline-color: white;"></textarea>
+<div id="panel03" class='control block-cube block-input input-icons'>
+  <input name='Service Name' placeholder='Service Name' type='text'>
+  <div class='bg'>
+    <div class='bg-inner'></div>
+  </div>
+</div>
+<textarea id="panel04" class="control block-cube block-input input-icons" maxlength="56" placeholder="Service Description" rows="5" cols="50" name="about" style="max-width:100%;font-size: large; background-color:#212121; color: white; outline-color: white;"></textarea>
+<div id="panel05" class='control block-cube block-input input-icons'>
+  <input name='Service Name' placeholder='Service Name' type='text'>
+  <div class='bg'>
+    <div class='bg-inner'></div>
+  </div>
+</div>
+<textarea id="panel06" class="control block-cube block-input input-icons" maxlength="56" placeholder="Service Description" rows="5" cols="50" name="about" style="max-width:100%;font-size: large; background-color:#212121; color: white; outline-color: white;"></textarea>
+<div id="panel07" class='control block-cube block-input input-icons'>
+  <input name='Service Name' placeholder='Service Name' type='text'>
+  <div class='bg'>
+    <div class='bg-inner'></div>
+  </div>
+</div>
+<textarea id="panel08" class="control block-cube block-input input-icons" maxlength="56" placeholder="Service Description" rows="5" cols="50" name="about" style="max-width:100%;font-size: large; background-color:#212121; color: white; outline-color: white;"></textarea>
+<div id="panel09" class='control block-cube block-input input-icons'>
+  <input name='Service Name' placeholder='Service Name' type='text'>
+  <div class='bg'>
+    <div class='bg-inner'></div>
+  </div>
+</div>
+<textarea id="panel010" class="control block-cube block-input input-icons" maxlength="56" placeholder="Service Description" rows="5" cols="50" name="about" style="max-width:100%;font-size: large; background-color:#212121; color: white; outline-color: white;"></textarea>
+<div id="panel011" class='control block-cube block-input input-icons'>
+  <input name='Service Name' placeholder='Service Name' type='text'>
+  <div class='bg'>
+    <div class='bg-inner'></div>
+  </div>
+</div>
+<textarea id="panel012" class="control block-cube block-input input-icons" maxlength="56" placeholder="Service Description" rows="5" cols="50" name="about" style="max-width:100%;font-size: large; background-color:#212121; color: white; outline-color: white;"></textarea>
+</br>
+
+
+<button class='btn block-cube block-cube-hover' type='button'>    
+  <div class='bg-top'>
+    <div class='bg-inner'></div>
+  </div>
+  <div class='bg-right'>
+    <div class='bg-inner'></div>
+  </div>
+  <div class='bg'>
+    <div class='bg-inner'></div>
+  </div>
+  <div id="flip6" class="text">
+   Skills
+  </div>
+</button> 
+</br>
+<div id="panel021" class='control block-cube block-input input-icons'>
+  <input name='Skill Name' placeholder='Skill Name' type='text'>
+  <div class='bg'>
+    <div class='bg-inner'></div>
+  </div>
+</div>
+<div id="panel022" class='control block-cube block-input input-icons'>
+  <input type="range" min="-100" max="0" value="0" class="range blue"/>
+  <div class='bg'>
+    <div class='bg-inner'></div>
+  </div>
+</div>
+
+<div id="panel023" class='control block-cube block-input input-icons'>
+  <input name='Skill Name' placeholder='Skill Name' type='text'>
+  <div class='bg'>
+    <div class='bg-inner'></div>
+  </div>
+</div>
+<div id="panel024" class='control block-cube block-input input-icons'>
+  <input type="range" min="-100" max="0" value="0" class="range blue"/>
+  <div class='bg'>
+    <div class='bg-inner'></div>
+  </div>
+</div>
+<div id="panel025" class='control block-cube block-input input-icons'>
+  <input name='Skill Name' placeholder='Skill Name' type='text'>
+  <div class='bg'>
+    <div class='bg-inner'></div>
+  </div>
+</div>
+<div id="panel026" class='control block-cube block-input input-icons'>
+  <input type="range" min="-100" max="0" value="0" class="range blue"/>
+  <div class='bg'>
+    <div class='bg-inner'></div>
+  </div>
+</div>
+<div id="panel027" class='control block-cube block-input input-icons'>
+  <input name='Skill Name' placeholder='Skill Name' type='text'>
+  <div class='bg'>
+    <div class='bg-inner'></div>
+  </div>
+</div>
+<div id="panel028" class='control block-cube block-input input-icons'>
+  <input type="range" min="-100" max="0" value="0" class="range blue"/>
+  <div class='bg'>
+    <div class='bg-inner'></div>
+  </div>
+</div>
+<div id="panel029" class='control block-cube block-input input-icons'>
+  <input name='Skill Name' placeholder='Skill Name' type='text'>
+  <div class='bg'>
+    <div class='bg-inner'></div>
+  </div>
+</div>
+<div id="panel0210" class='control block-cube block-input input-icons'>
+  <input type="range" min="-100" max="0" value="0" class="range blue"/>
+  <div class='bg'>
+    <div class='bg-inner'></div>
+  </div>
+</div>
+<div id="panel0211" class='control block-cube block-input input-icons'>
+  <input name='Skill Name' placeholder='Skill Name' type='text'>
+  <div class='bg'>
+    <div class='bg-inner'></div>
+  </div>
+</div>
+<div id="panel0212" class='control block-cube block-input input-icons'>
+  <input type="range" min="-100" max="0" value="0" class="range blue"/>
+  <div class='bg'>
+    <div class='bg-inner'></div>
+  </div>
+</div>
+</br>
+
+
+
   <button class='btn block-cube block-cube-hover' type='button'>
     <div class='bg-top'>
       <div class='bg-inner'></div>
@@ -416,10 +751,9 @@
       <div class='bg-inner'></div>
     </div>
     <div class='text'>
-      Submit 
+      Publish
     </div>
   </button>
-
 </br>  
 </form>
 </body>

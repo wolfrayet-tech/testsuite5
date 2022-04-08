@@ -13,6 +13,12 @@ h1 {
   font-size: 23px;
 }
 
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .form {
   width: 300px;
   padding: 64px 15px 24px;
@@ -133,20 +139,148 @@ h1 {
   top: 100%;
 }
 
-.credits {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  padding: 15px 15px;
-  width: 100%;
-  z-index: 111;
+a {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
-.credits a {
-  opacity: 0.6;
-  color: #fff;
-  font-size: 11px;
+
+a:link {
   text-decoration: none;
+  color: white;
 }
-.credits a:hover {
-  opacity: 1;
+
+a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  text-decoration: none;
+  color: rgb(10, 10, 197);
+}
+
+
+.butn {
+  width: 50%;
+  display: block;
+  padding: 14px 16px;
+  background: transparent;
+  outline: none;
+  border: 0;
+  color: #fff;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 16px;
+}
+
+
+.block-cbe {
+  position: relative;
+}
+.block-cbe .bg-tp {
+  position: absolute;
+  height: 10px;
+  background: #020024;
+  background: linear-gradient(90deg, #020024 0%, #340979 37%, #00d4ff 94%);
+  bottom: 100%;
+  left: 5px;
+  right: -5px;
+  transform: skew(-45deg, 0);
+  margin: 0;
+}
+.block-cbe .bg-tp .bg-iner {
+  bottom: 0;
+}
+
+.block-cbe .bcg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: #020024;
+  background: linear-gradient(90deg, #020024 0%, #340979 37%, #00d4ff 94%);
+}
+
+.block-cbe .bg-riht {
+  position: absolute;
+  background: #020024;
+  background: #00d4ff;
+  top: -5px;
+  z-index: 0;
+  bottom: 5px;
+  width: 10px;
+  left: 100%;
+  transform: skew(0, -45deg);
+}
+.block-cbe .bg-riht .bg-iner {
+  left: 0;
+}
+.block-cbe .bcg .bg-iner {
+  transition: all 0.2s ease-in-out;
+}
+.block-cbe .bg-iner {
+  background: #212121;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  right: 2px;
+  bottom: 2px;
+}
+.block-cbe .txt {
+  position: relative;
+  z-index: 2;
+}
+.block-cbe.block-inpt inpt {
+  position: relative;
+  z-index: 2;
+}
+.block-cube.block-inpt inpt:focus ~ .bg-riht .bg-iner, .block-cbe.block-inpt inpt:focus ~ .bg-tp .bg-iner, .block-cbe.block-inpt inpt:focus ~ .bg-iner .bg-iner {
+  top: 100%;
+  background: rgba(255, 255, 255, 0.5);
+}
+.block-cbe.block-inpt .bg-tp,
+.block-cbe.block-inpt .bg-riht,
+.block-cbe.block-inpt .bg {
+  background: rgba(255, 255, 255, 0.5);
+  transition: background 0.2s ease-in-out;
+}
+.block-cbe.block-inpt .bg-riht .bg-iner,
+.block-cbe.block-inpt .bg-tp .bg-iner {
+  transition: all 0.2s ease-in-out;
+}
+.block-cbe.block-inpt:focus .bg-tp,
+.block-cbe.block-inpt:focus .bg-riht,
+.block-cbe.block-inpt:focus .bg, .block-cbe.block-inpt:hover .bg-tp,
+.block-cbe.block-inpt:hover .bg-riht,
+.block-cbe.block-inpt:hover .bcg {
+  background: rgba(255, 255, 255, 0.8);
+}
+.block-cbe.block-cbe-hover:focus .bcg .bg-iner, .block-cbe.block-cbe-hover:hover .bcg .bg-iner {
+  top: 100%;
+}
+
+
+.input-icons i {
+  position: absolute;
+  
+}
+
+.input-icons {
+  display: none;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.icon {
+  padding: 10px;
+  min-width: 40px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
 }

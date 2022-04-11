@@ -3,7 +3,7 @@
 }
 
 body {
-  background-color: #212121;
+  background-color: #020614;
   color: #fff;
   font-family: monospace, serif;
   letter-spacing: 0.05em;
@@ -99,7 +99,7 @@ img {
   transition: all 0.2s ease-in-out;
 }
 .block-cube .bg-inner {
-  background: #212121;
+  background: #020614;
   position: absolute;
   left: 2px;
   top: 2px;
@@ -222,7 +222,7 @@ a:hover {
   transition: all 0.2s ease-in-out;
 }
 .block-cbe .bg-iner {
-  background: #212121;
+  background: #020614;
   position: absolute;
   left: 2px;
   top: 2px;

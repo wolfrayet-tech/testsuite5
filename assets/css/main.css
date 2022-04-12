@@ -66,11 +66,18 @@ body {
   left: 15px;
   font-size: 18px;
   font-weight: 800;
+}.tariffCards > div h4 {
+  font-family: monospace, serif;
+  position: absolute;
+  bottom: 5px;
+  left: 15px;
+  font-size: 15px;
+  font-weight: 800;
 }
 .tariffCards > div span {
   position: absolute;
   font-weight: 700;
-  bottom: 15px;
+  bottom: 8px;
   left: 15px;
   font-size: 12px;
   font-weight: 600;

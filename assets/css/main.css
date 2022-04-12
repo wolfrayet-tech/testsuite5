@@ -102,6 +102,12 @@ body {
   background-image: linear-gradient(135deg, #415197, #352f64);
   box-shadow: 5px 5px 60px rgba(34,50,84,0.1), 1px 1px 0px 1px #352f64;
 }
+.tariffCards > div.testi {
+  margin-top: -70px;
+  background-color: #8063e1;
+  background-image: linear-gradient(135deg, #bd7be8, #8063e1);
+  box-shadow: 5px 5px 60px rgba(34,50,84,0.1), 1px 1px 0px 1px #352f64;
+}
 .tariffCards > div:hover {
   transform: rotateX(30deg) rotateY(-15deg) rotate(30deg) translate(-25px, 50px);
 }

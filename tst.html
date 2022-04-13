@@ -1,63 +1,58 @@
-
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
 
 <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content=
-		"width=device-width, initial-scale=1.0" />
-		
 	<title>
-		How to animate a straight
-		line in linear motion?
+		How to hide div element by default
+		and show it on click using
+		JavaScript and Bootstrap ?
 	</title>
-
+	
 	<style>
-		body {
-			margin: 0;
-			padding: 0;
-			background: rgb(23, 18, 72);
-		}
-
-		.geeks {
-			width: 400px;
-			height: 2px;
-			background: #fff;
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-		}
-
-		.geeks::before {
-			content: "";
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background: rgb(23, 18, 72);
-			animation: animate 1s linear infinite;
-		}
-
-		@keyframes animate {
-			0% {
-				left: 0%;
-			}
-
-			0% {
-				left: 0%;
-			}
-
-			100% {
-				left: 100%;
-			}
+		#div {
+			display: none;
+			background: green;
+			height: 100px;
+			width: 200px;
+			margin: 0 auto;
+			color: white;
 		}
 	</style>
+	
+	<link rel="stylesheet" href=
+"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	
+	<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js">
+	</script>
 </head>
 
-<body>
-	<div class="geeks"></div>
+<body style="text-align:center;">	
+	<h1 style="color:green;">
+		GeeksForGeeks
+	</h1>	
+	<p id="GFG_UP"></p>	
+	<div id="div">
+		This is Div box.
+	</div>
+	<br>	
+	<button onClick="GFG_Fun()">
+		click here
+	</button>
+	<br>	
+	<p id="GFG_DOWN" style="color: green;"></p>
+	
+	<script>
+		$('#GFG_UP')
+		function show(divId) {
+			$("#" + divId).show();
+		}
+
+		function GFG_Fun() {
+			show('div');
+			$('#GFG_DOWN')
+		}
+	</script>
 </body>
 
 </html>

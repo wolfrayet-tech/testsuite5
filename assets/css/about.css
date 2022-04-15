@@ -191,7 +191,7 @@ p {
 			background: #fff;
 			position: absolute;
 			top: 130%;
-			left: 20%;
+			left: 25%;
       display: block;
 			transform: translate(-50%, -50%);
       transform: rotate(90deg);
@@ -226,7 +226,7 @@ p {
 			background: #fff;
 			position: absolute;
 			bottom: 130%;
-			left: 30%;
+			left: 10%;
       display: block;
 			transform: translate(-50%, -50%);
       transform: rotate(-90deg);
@@ -255,4 +255,25 @@ p {
 			100% {
 				left: 100%;
 			}
+		}
+
+		.text3{
+			position: relative;
+			top:220px;
+			right:30px;
+			font-size:x-large;
+			font-family: monospace, serif;
+		}.text4{
+			position: relative;
+			top:195px;
+			left:110px;
+			font-size:x-large;
+			font-family: monospace, serif;
+		}.text5{
+			position: relative;
+			bottom:280px;
+			left:-90px;
+			left:-90px;
+			font-size:x-large;			
+			font-family: monospace, serif;
 		}

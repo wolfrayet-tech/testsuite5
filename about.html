@@ -5,31 +5,115 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/about.css" />
 		<link rel="icon" type="image/x-icon" href="images/logo.png">	
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.2/gsap.min.js" integrity="sha512-kVlGhj2qFy+KBCFuvjBJTGUMxbdqJKs4yK2jh0e0VPhWUPiPC87bzm4THmaaIee3Oj7j6sDpTTgm2EPPiESqBg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
-    <script src=
-    "https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.2/gsap.min.js" integrity="sha512-kVlGhj2qFy+KBCFuvjBJTGUMxbdqJKs4yK2jh0e0VPhWUPiPC87bzm4THmaaIee3Oj7j6sDpTTgm2EPPiESqBg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>     
+		<script src=
+"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+    </script>
       </script>
 	<script>$('#GFG_UP')
-		function show(divId) {
+		function show(divId) 
+		{
 			$("#" + divId).show();
 		}
-
-		function GFG_Fun() {
-			show('div');
-		
-  }function GFG_Fun1() {
-			show('div1');
-		
-  }function GFG_Fun2() {
+		function GFG_Fun() 
+		{
+			show('div');		
+  		}
+  function GFG_Fun1() 
+  {
+			show('div1');		
+  }
+  function GFG_Fun2()
+   {
 			show('div2');			
-  }function GFG_Fun3() {
+  }
+  function GFG_Fun3() 
+  {
 			show('div3');			
-  }function GFG_Fun4() {
+  }
+  function GFG_Fun4() 
+  {
 			show('div4');			
-  }function GFG_Fun5() {
+  }
+  function GFG_Fun5() 
+  {
 			show('div5');			
   }
-  </script>   
+  $('#GF')
+  function hide(divId) 
+	{
+		$("#" + divId).hide();
+	}
+	function GFG_Fun6() 
+  		{
+			hide('div6');			
+  		}
+	if($('#GFG_UP').GFG_Fun1()==='show')
+	{
+		GFG_Fun6();
+	}
+	
+  </script> 
+ 
+
+  
+  
+  <script>var TxtRotate = function(el, toRotate, period) {
+	this.toRotate = toRotate;
+	this.el = el;
+	this.loopNum = 0;
+	this.period = parseInt(period, 10) || 2000;
+	this.txt = '';
+	this.tick();
+	this.isDeleting = false;
+  };
+  
+  TxtRotate.prototype.tick = function() {
+	var i = this.loopNum % this.toRotate.length;
+	var fullTxt = this.toRotate[i];
+  
+	if (this.isDeleting) {
+	  this.txt = fullTxt.substring(0, this.txt.length - 1);
+	} else {
+	  this.txt = fullTxt.substring(0, this.txt.length + 1);
+	}
+  
+	this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+  
+	var that = this;
+	var delta = 300 - Math.random() * 100;
+  
+	if (this.isDeleting) { delta /= 2; }
+  
+	if (!this.isDeleting && this.txt === fullTxt) {
+	  delta = this.period;
+	  this.isDeleting = true;
+	} else if (this.isDeleting && this.txt === '') {
+	  this.isDeleting = false;
+	  this.loopNum++;
+	  delta = 500;
+	}
+  
+	setTimeout(function() {
+	  that.tick();
+	}, delta);
+  };
+  
+  window.onload = function() {
+	var elements = document.getElementsByClassName('txt-rotate');
+	for (var i=0; i<elements.length; i++) {
+	  var toRotate = elements[i].getAttribute('data-rotate');
+	  var period = elements[i].getAttribute('data-period');
+	  if (toRotate) {
+		new TxtRotate(elements[i], JSON.parse(toRotate), period);
+	  }
+	}
+	// INJECT CSS
+	var css = document.createElement("style");
+	css.type = "text/css";
+	css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
+	document.body.appendChild(css);
+  };</script>  
   <style>
 		#div {
 			display: none;						
@@ -49,11 +133,16 @@
 		}#div5 {
 			display: none;						
 			margin: 0 auto;			
+		}#div6 {
+									
+			margin: 0 auto;			
 		}
 	</style>    
 	</head>
-	<body>            
-        <button onClick="GFG_Fun(), GFG_Fun1(), GFG_Fun2(), GFG_Fun3(), GFG_Fun4(), GFG_Fun5()" class="card">
+	<body> 
+		<a href="index.html"><button style="font-family: monospace, serif;" class="bn30">Home</button></a>  
+		<img src="images/logo.png" style="position: absolute; left: 20px; top: 10px;">         
+        <button id="click" onClick="GFG_Fun(), GFG_Fun1(), GFG_Fun2(), GFG_Fun3(), GFG_Fun4(), GFG_Fun5(), GFG_Fun6()" class="card">
             <div class="row clearfix">              
               <div class="left big"><img src="images/logo.png" style="position: absolute; left: 20px; top: 10px;">	</div>
               <div class="right"><h4 style="font-size: large; font-family: monospace,serif; color: crimson; position: absolute; left: 260px; top: -5px;">Fusion</h4></div>
@@ -63,7 +152,7 @@
               <p style="position: absolute;top: 150px;left: 30px; color: aliceblue;"><span class="big">V</span>ice <span class="big">P</span>resident</p>
             </div>
             <div class="row">
-              <img src="images/er.png" style="position: absolute; left: 230px; top: 90px;">			  										  				
+              <img href="index.html" src="images/er.png" style="position: absolute; left: 230px; top: 90px;">			  										  				
             </div>
             <div id="div"  class="geeks"></div>
             <div id="div1"  class="geeks1"></div>
@@ -71,6 +160,415 @@
             <div id="div3"  class="text3"><p>N.F.C.</p></div>
             <div id="div4"  class="text4"><p>QR Code</p></div>
             <p id="div5"  class="text5">SHARE</p>
-          </button>          
+          </button>  
+		  <div style="position: relative; top: 150px; font-size:x-large; text-align: center;font-family: monospace, serif;" id="div6">TAP THE CARD.</div>
+		  <div style="text-align: center; position: absolute; top: 55%;">
+		  </div>
+	 
+	 <a class="ca3-scroll-down-link ca3-scroll-down-arrow" data-ca3_icon=""></a>	 	
+	 
+	 <div style="text-align: center; position: absolute; top: 100%;">
+		<h1>ABOUT.</h1></br>
+		<span style="font-size:xx-large; font-family: monospace, serif; "
+     class="txt-rotate"
+     data-period="2000"
+     data-rotate='[ "TAP.", "SCAN.", "SHARE."]'></span>
+	</br>
+	</br>
+	 <p style="font-family: monospace, serif; font-size: large;"> 
+
+		The Next Generation Smart Business Card : A card which comes with an advanced technology called "NFC", Near Field Communication. Now communication got easier </br> and faster with Fusion. Forget paper cards, one card for all your communication needs, you are just a tap / scan / share away. Engrave your first </br>impression as one of the smartest people with Fusion. Enhance your netowkring with people and stay ahead of all.</br></br>
+		
+		Smart Sharing | Smart Networking </br></br>
+		
+		Share your contact and other details in 3 ways :</br></br>
+		
+		1. NFC | Tap & Share</br>
+		2. QR | Scan & Share</br>
+		3. Link | Text & Share</br></br>
+		
+		Fusion | The next gen card is beneficial for students, employees, freelancers, artist, businessman and for all those who are working.</br></br>
+		
+		Bring the best card home.</br></br>
+		
+		Quick Contact.</br>
+		No Mobile App Required.</br>
+		All Details In One Place.</br>
+		Unlimited Taps.</br></br>
+		
+		Reason to get fused by Fusion !</br>
+		- Engrave your first impression strongly</br>
+		- Enhance your professional approach</br>
+		- Select and share</br>
+		- Greater identification</br>
+		</br></br>
+		</p></div>
+		
+	 <div style="text-align: center; position: relative; top: 230%;">
+		<h1>COMPATIBLE DEVICES.</h1>
+	 <p style="font-family: monospace, serif; font-size: large;"><strong>IOS</strong> </br></br>
+
+		<strong>Apple</strong></br></br>
+		
+		iphone 7</br>
+		iphone 7 plus</br>
+		iphone 8</br>
+		iphone 8 plus</br>
+		iphone X</br>
+		iphone XS</br>
+		iphone XS Max</br>
+		iphone XR</br>
+		iphone SE (2020)</br>
+		iphone 11</br>
+		iphone 11 pro</br>
+		iphone 12</br>
+		iphone 12 mini</br>
+		iphone 12 pro</br>
+		iphone 12 pro Max</br>
+		iphone 13</br>
+		iphone 13 mini</br>
+		iphone 13 pro</br>
+		iphone 13 pro Max</br>
+		and all future models</br></br>
+		
+		<strong>Android</strong></br></br>
+		
+		<strong>Samsung</strong></br></br>
+		
+		Galaxy SIII</br>
+		Galaxy S4</br>
+		Galaxy S5</br>
+		Galaxy S6</br>
+		Galaxy S6 Edge</br>
+		Galaxy S6 Edge+</br>
+		Galaxy S7</br>
+		Galaxy S7 Edge</br>
+		Galaxy S8</br>
+		Galaxy S8+</br>
+		Galaxy S9</br>
+		Galaxy S9+</br>
+		Galaxy S9 Plus</br>
+		Galaxy S10</br>
+		Galaxy S10 Plus</br>
+		Galaxy S21 Plus</br>
+		Galaxy S20 Plus</br>
+		Galaxy S20 Ultra</br>
+		Galaxy S21 Ultra</br>
+		Galaxy S20 FE</br>
+		Galaxy Note 3</br>
+		Galaxy Note 3 NEO</br>
+		Note 5</br>
+		Galaxy Note 5</br>
+		Galaxy Note 10 Lite</br>
+		Galaxy Note 10 Plus</br>
+		Galaxy Alpha</br>
+		Galaxy A32</br>
+		Galaxy A30s</br>
+		Galaxy A5</br>
+		Galaxy A50s</br>
+		Galaxy A51</br>
+		Galaxy A52s</br>
+		Galaxy A52</br>
+		Galaxy A70</br>
+		Galaxy A70s</br>
+		Galaxy A72</br>
+		Galaxy A80</br>
+		Galaxy M32</br>
+		Galaxy M40</br>
+		Galaxy M42</br>
+		Galaxy A50s 6GB RAM</br>
+		Galaxy M51</br>
+		Galaxy F62</br>
+		Galaxy On8</br>
+		Galaxy S3 Neo</br>
+		Galaxy Z Flip 3</br>
+		Galaxy Z Fold 3</br>
+		and all future models</br></br>
+		
+		<strong>One Plus</strong>
+		
+		OnePlus 3</br>
+		OnePlus 3T</br>
+		OnePlus 5</br>
+		OnePlus 5T</br>
+		OnePlus 6</br>
+		OnePlus 7</br>
+		OnePlus 7T</br>
+		OnePlus 7 Pro</br>
+		7T Pro McLaren Edition</br>
+		OnePlus 8 Pro</br>
+		OnePlus 8</br>
+		OnePlus Nord</br>
+		OnePlus 8T</br>
+		OnePlus 6T</br>
+		OnePlus 9</br>
+		OnePlus 9 Pro</br>
+		OnePlus 9 R</br>
+		and all future models</br>
+		</br>
+		<strong>Nokia</strong>
+		</br></br>
+		Nokia 3</br>
+		Nokia 3.1</br>
+		Nokia 4.2</br>
+		Nokia 5</br>
+		Nokia 5.1</br>
+		Nokia 6</br>
+		Nokia 6.1</br>
+		Nokia 7</br>
+		Nokia 7 Plus</br>
+		Nokia 8 Sirocco</br>
+		Nokia 8</br>
+		Nokia 8.1</br>
+		Nokia 9</br>
+		Nokia Lumia 920</br>
+		Nokia Lumia 930</br>
+		and all future models</br></br>
+		
+		<strong>Motorola</strong>
+		</br></br>
+		Motorola One</br>
+		Motorola One Vision</br>
+		Motorola One Action</br>
+		Motorola One Vision Plus</br>
+		Moto Z3 Play</br>
+		Moto E4 Plus</br>
+		Moto X4</br>
+		Moto E5/Plus</br>
+		Moto E5 Play/Go</br>
+		Moto G5/G5S Plus</br>
+		Moto G6/Plus/Play</br>
+		Motorola Razr</br>
+		Motorola Moto Turbo</br>
+		Motorola Moto X Force</br>
+		Motorola Moto X Play</br>
+		Motorola Edge S</br>
+		Motorola Edge 20</br>
+		Motorola Edge 20 Fusion</br>
+		Motorola Edge S Pro</br>
+		Motorola Edge 20 Pro</br>
+		Motorola Edge 20 Lite</br>
+		Motorola Edge Plus</br>
+		Motorola Edge</br>
+		Motorola Defy</br>
+		Motorola Moto X</br>
+		and all future models</br></br>
+		
+		<strong>LG</strong></br></br>
+		
+		LG G3</br>
+		LG G4</br>
+		LG G5</br>
+		LG Nexus 5X</br>
+		LG V10</br>
+		LG V20</br>
+		LG V30</br>
+		LG V30 ThinQ</br>
+		LG V35 ThinQ</br>
+		LG V40 ThinQ</br>
+		LG G6</br>
+		LG Q6</br>
+		LG Q6 Plus</br>
+		LG Q Styus</br>
+		LG Q Stylus 4</br>
+		LG Q7</br>
+		LG G7 ThinQ</br>
+		LG Q8</br>
+		LG G8 ThinQ</br>
+		LG Q92</br>
+		LG K10</br>
+		LG K62</br>
+		LG K92</br>
+		LG V35 ThinQ</br>
+		LG Wing</br>
+		LG G7 Plus ThinQ</br>
+		LG G4 Dual</br>
+		LG G2</br>
+		LG G2</br>
+		LG Stylus 2 Plus</br>
+		LG F70</br>
+		LG G Pro 2</br>
+		LG Q7 Plus</br>
+		and all future models</br>
+		</br>
+		<strong>Xiaomi</strong>
+		</br></br>
+		Xiaomi Mi 11X</br>
+		Xiaomi Mi 11 Lite</br>
+		Xiaomi Mi 10T Pro</br>
+		Xiaomi Mi 10</br>
+		Xiaomi Mi 10T</br>
+		Xiaomi Mi 11X</br>
+		Xiaomi Mi 11X Lite</br>
+		Xiaomi Mi3</br>
+		Xiaomi Redmi Note 10 Pro</br>
+		Xiaomi Redmi K40</br>
+		Xiaomi Mi Mix 4</br>
+		Xiaomi Mi 11T Pro</br>
+		Xiaomi Mi 11 Pro</br>
+		Xiaomi Redmi Note 9 Pro</br>
+		Xiaomi Redmi K40 Pro</br>
+		Xiaomi Mi 11 Ultra</br>
+		Xiaomi Mi 11 Lite NE</br>
+		Xiaomi Mi 11</br>
+		Xiaomi Mi5</br>
+		Xiaomi Mi 10T Lite</br>
+		Xiaomi Redmi K30s</br>
+		Xiaomi Mi 11i</br>
+		Xiaomi Redmi Note 9T</br>
+		Xiaomi Mi 10 Lite</br>
+		Xiaomi Redmi K40 Pro Plus</br>
+		Xiaomi Mi 10S</br>
+		Xiaomi Mi Mix Fold</br>
+		Xiaomi Redmi K30 Ultra</br>
+		Xiaomi Mi 10 Ultra</br>
+		Xiaomi Mi 11 Lite</br>
+		Xiaomi Mi 11 T</br>
+		and all future models</br></br>
+		
+		<strong>Google</strong></br></br>
+		
+		Google Pixel</br>
+		Google Pixel XL</br>
+		Google Pixel 2</br>
+		Google Pixel 2XL</br>
+		Google Pixel 3XL</br>
+		Google Pixel 3</br>
+		Google Pixel 3A</br>
+		Google Nexus 4</br>
+		Google Pixel 4A</br>
+		Google LG Nexus 5</br>
+		Google Nexus 5X</br>
+		Google Nexus 6P</br>
+		and all future models</br></br>
+		
+		<strong>Realme</strong>
+		
+		Realme GT</br>
+		Realme Narzo 30</br>
+		Realme X7 Max</br>
+		Realme X7 Pro</br>
+		Realme Narzo 30</br>
+		Realme X50 Pro</br>
+		Realme X7 Max</br>
+		Realme X2 Pro</br>
+		Realme GT Neo</br>
+		and all future models</br></br>
+		
+		<strong>Sony</strong>
+		</br></br>
+		XA1/Ultra/Plus</br>
+		XA2/Ultra/Plus</br>
+		XZ1/Compact</br>
+		XZ2/Compact/Premium</br>
+		Sony Xperia 10</br>
+		Sony Xperia 10 Lite</br>
+		Sony Xperia 8 Lite</br>
+		Sony Xperia XA1</br>
+		Sony Xperia Z1</br>
+		Sony Xperia C5</br>
+		Sony Xperia XZ1</br>
+		Sony Xperia XA1 Dual</br>
+		Sony Xperia XA1 Ultra</br>
+		Sony Xperia XZ</br>
+		Sony Xperia T3</br>
+		Sony Xperia XA</br>
+		Sony Xperia ZR</br>
+		Sony Xperia Z3+</br>
+		Sony Xperia SP</br>
+		Sony Xperia XA1 Plus</br>
+		Sony Xperia Z2</br>
+		Sony Xperia Z5</br>
+		Sony Xperia T2</br>
+		Sony Xperia E3</br>
+		Sony Xperia Z3</br>
+		Sony Xperia L2</br>
+		Sony Xperia M2</br>
+		and all future models</br></br>
+		
+		<strong>Asus</strong></br></br>
+		
+		Asus ROG Phone</br>
+		and all future models</br></br>
+		
+		<strong>Vivo</strong>
+		</br></br>
+		Vivo X70 Pro Plus</br>
+		Vivo X70 Pro</br>
+		Vivo X70</br>
+		Vivo Z6</br>
+		Vivo S10 Pro</br>
+		Vivo Nex 3S</br>
+		Vivo S9 5G</br>
+		Vivo X60T Pro Plus</br>
+		Vivo X60T</br>
+		Vivo Y53s</br>
+		and all future models</br></br>
+		
+		<strong>HTC</strong></br></br>
+		
+		HTC One A9</br>
+		HTC Desire 20 Plus</br>
+		HTC U Ultra</br>
+		HTC 10 Evo</br>
+		HTC U11 Plus</br>
+		HTC Desire 10 Pro</br>
+		HTC One E8</br>
+		HTC Desire Eye</br>
+		HTC 10 Lifestyle</br>
+		HTC One ME</br>
+		HTC One E9+</br>
+		HTC One M9 Plus</br>
+		and all future models</br></br>
+		
+		<strong>Essential</strong></br></br>
+		
+		PH</br>
+		PH -1</br>
+		and all future models</br></br>
+		
+		<strong>Honor</strong></br></br>
+		
+		Honor 8</br>
+		Honor View 20</br>
+		Honor V10</br>
+		Honor 8 Pro</br>
+		and all future models</br></br>
+		
+		<strong>Poco</strong></br></br>
+		
+		Poco F2 Pro</br>
+		Poco F3</br>
+		Poco X3 GT</br>
+		and all future models</br></br>
+		
+		<strong>Oppo</strong></br></br>
+		
+		OPPO Reno6</br>
+		OPPO Reno6 Pro</br>
+		OPPO Reno 4</br>
+		OPPO Reno 2</br>
+		OPPO Find X2</br>
+		OPPO R17 Pro</br>
+		OPPO Reno 3</br>
+		OPPO Find X3 Pro</br>
+		OPPO Reno 6 Pro Plus</br>
+		OPPO K9</br>
+		OPPO A95</br>
+		OPPO Find X3</br>
+		OPPO K9 Pro</br>
+		OPPO Reno 5 Pro</br>
+		OPPO Reno 10x</br>
+		OPPO N1</br>
+		OPPO Reno 5A</br>
+		OPPO Reno</br>
+		OPPO Reno6 4G</br>
+		OPPO A16s</br>
+		OPPO A94</br>
+		OPPO Find X3 Neo</br>
+		OPPO Reno 5 Lite</br>
+		OPPO Reno 3A</br>
+		OPPO N1 Mini</br>
+		and all future models </p></div>
     </body>
 </html>

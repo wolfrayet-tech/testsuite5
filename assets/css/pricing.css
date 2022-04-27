@@ -156,7 +156,7 @@
     margin-top: -320px;
     z-index: 3;
     color: #fff;
-    background-color: #111;
+    background-color: rgb(0, 0, 0);
   }
   
   /* ***** Specific Styles - End ***** */
@@ -170,4 +170,37 @@
   .card-6 {
       display: none;
     }
+  }
+
+  .bn31 {
+    background-image: linear-gradient(to right, #1500b0 0%, #00e1ff 100%);
+    border-radius: 40px;
+    box-sizing: border-box;
+    color: #2bc6ec;
+    display: block;
+    height: 50px;
+    font-size: 1.4em;
+    padding: 4px;
+    
+    text-decoration: none;
+    width: 7em;
+    z-index: 2;
+    font-family: monospace, serif;
+    margin: auto;
+  }
+  .bn31:hover {
+    color: #fff;
+  }
+  .bn31 .bn31span {
+    align-items: center;
+    background: #020614;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    transition: background 0.5s ease;
+    width: 100%;
+  }
+  .bn31:hover .bn31span {
+    background: transparent;
   }

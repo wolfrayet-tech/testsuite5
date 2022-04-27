@@ -17,9 +17,9 @@ const colors = {
     $lightWhite: "#dae4ee"
 };
 const balance = {
-    $card1: 3021,
-    $card2: 568,
-    $card3: 2748
+    $card1: 1200,
+    $card2: 600,
+    $card3: 800
 };
 const cardPositions = {
     $top: {
@@ -247,7 +247,7 @@ const setCurrentCardAnimation = () => {
     }
 };
 // ***** Function : setCurrentCardAnimation : End *****
-
+var link="card1.html";
 // ***** Event Handlers : Start *****
 $(".slide-1").click(function () {
     const marginTop = $(this).css("margin-top");
@@ -269,6 +269,8 @@ $(".slide-1").click(function () {
     extraCardsBackgroundColor = colors.$lightBlack;
     bodyBackgroundColor = colors.$black;
     setAnimationForExtraCards();
+
+    link="card1.html";
     }
 });
 
@@ -292,6 +294,7 @@ $(".slide-2").click(function () {
     extraCardsBackgroundColor = colors.$lightWhite;
     bodyBackgroundColor = colors.$white;
     setAnimationForExtraCards();
+    link="card2.html";
     }
 });
 
@@ -315,11 +318,16 @@ $(".slide-3").click(function () {
     extraCardsBackgroundColor = colors.$lightBlue;
     bodyBackgroundColor = colors.$blue;
     setAnimationForExtraCards();
+    link="card3.html";
     }
 });
 // ***** Event Handlers : End *****
 
-// ***** Clearing Timelines : Start *****
+function change_card_page(){
+    // console.log(link);
+    window.location = link;
+}
+// ***** Clearing Timelines : Start ****
 animateExtraCards.eventCallback("onComplete", () => {
     animateExtraCards.clear();
 });

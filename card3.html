@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/x-icon" href="images/logo.png">
+    <title>Fusion | Standard Business Card</title>
+    <link rel="stylesheet" href="assets/css/card1.css"/>
+    <!-- Vendor Script -->
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+</head>
+<script>
+    function myFunction() {
+      document.getElementById("myCheck").click();
+    }
+    </script>
+<body >
+    
+
+    <div class="container">
+        <div class="imgBx">
+            <img src="images/1.png" alt="Nike Jordan Proto-Lyte Image">
+        </div>
+        
+        <div class="details">
+            
+            <div class="content">
+                <a href="pricing.html"><button style="font-family: monospace, serif;" class="bn30">Back</button></a>  
+                <h2>Fusion Business Card <br>
+                    <span>Premium</span>
+                </h2>
+                <p class="product-colors">Color Preview:
+                    <span class="black active" data-color-primary="rgb(19, 17, 17)" data-color-sec="#212121" data-pic="images/1.png"></span>
+                    <span class="blue" data-color-primary="#06004a" data-color-sec="#0ca0ef" data-pic="images/4.png"></span>
+                    <span class="red" data-color-primary="#9d0000" data-color-sec="#f40000" data-pic="images/6.png"></span>
+                    <span class="orange" data-color-primary="#ab4500" data-color-sec="#fd6500" data-pic="images/6.png"></span>
+                </p>
+                <p>
+                    <strong>Card Features  | Premium Trim</strong></br>
+-Your Name & Contact: <strong>Available.</strong></br>
+
+-NFC Chip: <strong>Available</strong></br>
+-QR Code: <strong>Available</strong></br>
+-Logo Customization: <strong>Available</strong></br>
+-Custom Color: <strong>Available</strong></br>
+-Image Customization: Not Available</br>
+-NFT Embedment: Not Available</br>
+               <p style="font-size:x-small ;"> Note: The colors above are just a preview of a few color options on this trim of the card, <strong>The color of the card is not limited to the options above and can be set to ANY custom color of your choice.</strong></p>
+
+
+
+                </p>
+                
+                <h3>Rs. 800</h3>
+                <button>Buy Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        
+    </footer>
+
+
+    <script>
+        // Change The Picture and Associated Element Color when Color Options Are Clicked.
+        $(".product-colors span").click(function() {
+            $(".product-colors span").removeClass("active");
+            $(this).addClass("active");
+            $(".active").css("border-color", $(this).attr("data-color-sec"))
+            $("body").css("background", $(this).attr("data-color-primary"));
+            $(".content h2").css("color", $(this).attr("data-color-sec"));
+            $(".content h3").css("color", $(this).attr("data-color-sec"));
+            $(".container .imgBx").css("background", $(this).attr("data-color-sec"));
+            $(".container .details button").css("background", $(this).attr("data-color-sec"));
+            $(".imgBx img").attr('src', $(this).attr("data-pic"));
+        });
+    </script>
+
+</body>
+
+</html>

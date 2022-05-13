@@ -14,6 +14,7 @@
   
   .container {
     display: flex;
+    margin-top: auto;
     justify-content: center;
     align-items:center;
   }
@@ -254,4 +255,32 @@
     .bn30:hover .text {
     background-image: linear-gradient(-45deg, #000673, #00d0ff);
     }
-    
+    a.button1{
+      display:inline-block;
+      padding:0.35em 1.2em;
+      border:0.2em solid #ffffff;
+      margin:0 0.3em 0.3em 0;
+      border-radius:0.9em;
+      box-sizing: border-box;
+      text-decoration:none;
+      background-color: transparent;
+      font-family:'Roboto',sans-serif;
+      font-weight:300;
+      color:#ff0000;
+      text-align:center;
+      transition: all 0.2s;
+      position: relative;
+      top: 51%;
+      left: 50%;
+      z-index: 4;
+      }
+      a.button1:hover{
+      color:#ffffff;
+      background-color:#910202;
+      }
+      @media all and (max-width:3em){
+      a.button1{
+      display:block;
+      margin:0.4em auto;
+      }
+      }

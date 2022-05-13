@@ -10,13 +10,29 @@
     overflow: hidden;
     overflow-y: auto;
   }
+  .lol{
+    position: relative;
+    left: 10%;
+  }
+  @media (pointer:coarse) {
+    
   
-  
+  .lol{
+    position: relative;
+    left:2%;
+    top: 2%;
+  }
+  }
   .container {
     display: flex;
-    margin-top: -30%;
+    margin-top:-5%;
     justify-content: center;
     align-items:center;
+  } 
+  @media (pointer:coarse) {
+    .container{
+    margin-top: -30%;
+    }
   }
   
   .card-6, .card-5, .card-4, .card-3, .card-2, .card-1 {
@@ -193,8 +209,8 @@
       text-align:center;
       transition: all 0.2s;
       position: relative;
-      top: 37%;
-      left: 27%;
+      top: 40%;
+      left: 44%;
       z-index: 4;
       }
       a.button1:hover{
@@ -204,8 +220,12 @@
       @media all and (max-width:3em){
       a.button1{
       display:block;
-      margin:0.4em auto;
-      top: 51%;
-      left: 50%;
+      margin:0.4em auto;      
       }
+      }
+      @media (pointer:coarse){
+        a.button1{
+          top: 37%;
+          left: 28%;
+        }
       }

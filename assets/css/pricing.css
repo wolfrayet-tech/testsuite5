@@ -177,41 +177,6 @@
     }
   }
 
-  .bn31 {
-    background-image: linear-gradient(to right, #800808 0%, #fe242b 100%);
-    border-radius: 40px;
-    box-sizing: border-box;
-    color: #ffffff;
-    display: block;
-    height: 50px;
-    font-size: 1.4em;
-    padding: 4px;    
-    position:absolute;
-    margin-top:70%;
-    margin-left: 42%;
-    text-decoration: none;
-    width: 7em;
-    z-index: 2;
-    font-family: monospace, serif;
-    
-  }
-  .bn31:hover {
-    color: #fff;
-  }
-  .bn31 .bn31span {
-    align-items: center;
-    background: #020614;
-    border-radius: 40px;
-    display: flex;
-    justify-content: center;
-    height: 100%;
-    transition: background 0.5s ease;
-    width: 100%;
-  }
-  .bn31:hover .bn31span {
-    background: transparent;
-  }
-
   .bn30 {
     border: 5em;
     cursor: pointer;

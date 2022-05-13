@@ -247,5 +247,7 @@
       a.button1{
       display:block;
       margin:0.4em auto;
+      top: 51%;
+      left: 50%;
       }
       }

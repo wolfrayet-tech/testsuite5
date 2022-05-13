@@ -14,7 +14,7 @@
   
   .container {
     display: flex;
-    margin-top: -10%;
+    margin-top: -20%;
     justify-content: center;
     align-items:center;
   }
@@ -193,8 +193,8 @@
       text-align:center;
       transition: all 0.2s;
       position: relative;
-      top: 59%;
-      left: 20%;
+      top: 40%;
+      left: 23%;
       z-index: 4;
       }
       a.button1:hover{

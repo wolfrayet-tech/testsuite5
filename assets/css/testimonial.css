@@ -1,16 +1,32 @@
 
 
 .icon-cards {
-    position: relative;
-    width: 60vw;
-    height: 40vw;
-    max-width: 380px;
-    max-height: 250px;
-    margin: 0;
-    margin-top: -50%;
-    color: white;
-    perspective: 1000px;
-    transform-origin: center;
+  position: relative;
+  width: 60vw;
+  height: 40vw;
+  max-width: 380px;
+  max-height: 250px;
+  margin: 0;
+  margin-bottom: 10%;
+  color: white;
+  perspective: 1000px;
+  transform-origin: center;
+}
+@media (pointer:coarse) {
+  
+
+  .icon-cards {
+      position: relative;
+      width: 60vw;
+      height: 40vw;
+      max-width: 380px;
+      max-height: 250px;
+      margin: 0;
+      margin-top: -60%;
+      color: white;
+      perspective: 1000px;
+      transform-origin: center;
+    }
   }
   .icon-cards__content {
     position: absolute;

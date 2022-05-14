@@ -226,7 +226,8 @@
       }
       @media (pointer:coarse){
         a.button1{
-          top: 47%;
+          position: relative;
+          top: 49%;
           left: 28%;
         }
       }

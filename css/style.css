@@ -7,6 +7,13 @@ body {
   color: #fff;
   font-family: monospace, serif;
   letter-spacing: 0.05em;
+  
+}
+@media (pointer:coarse) {
+  body{
+    overflow-x: hidden;
+  }
+  
 }
 
 h1 {

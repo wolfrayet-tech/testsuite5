@@ -408,9 +408,9 @@ input[type=range]::-moz-range-thumb:active {
   font: 1rem 'Fira Sans', monospace, serif;
   font-size: large;
   color:rgb(0, 204, 255);
-  position: absolute;   
-  top: 315px;
-  right: 650px;
+  position: relative;   
+  top: -90px;
+  right: -162px;
 }
 
 @media (pointer:coarse){
@@ -418,9 +418,9 @@ input[type=range]::-moz-range-thumb:active {
   font: 1rem 'Fira Sans', monospace, serif;
   font-size: large;
   color:rgb(0, 204, 255);
-  position: absolute;   
-  top: 315px;
-  right: 40px;
+  position: relative;   
+  top: -90px;
+  right: -162px;
 }
 }
 hr.solid {

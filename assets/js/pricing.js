@@ -17,7 +17,7 @@ const colors = {
     $lightWhite: "#dae4ee"
 };
 const balance = {
-    $card1: 1200,
+    $card1: 1000,
     $card2: 600,
     $card3: 800
 };
